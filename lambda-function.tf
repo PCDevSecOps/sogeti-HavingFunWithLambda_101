@@ -2,7 +2,7 @@
 resource "aws_lambda_function" "buienradar" {
   filename         = "${path.module}/buienradar/buienradar-lambda.zip"
   function_name    = "${var.prefix}-lambda-function"
-  description    = "${var.prefix}-lambda-function"
+  description      = "${var.prefix}-lambda-function"
   role             = aws_iam_role.lambda_role.arn
   handler          = "buienradar-lambda.lambda_handler"
   source_code_hash = filebase64sha256("${path.module}/buienradar/buienradar-lambda.zip")
@@ -27,7 +27,8 @@ resource "aws_lambda_function" "buienradar" {
     }
   }
   tags = {
-    Name = "${var.prefix}-lambda-function"
+    Name      = "${var.prefix}-lambda-function"
+    yor_trace = "aed3dfd3-a1d8-417a-81ea-e1c09f6a1b63"
   }
 }
 
@@ -37,7 +38,8 @@ resource "aws_cloudwatch_log_group" "buienradar" {
   retention_in_days = 3
 
   tags = {
-    Name = "${var.prefix}-lambda-function"
+    Name      = "${var.prefix}-lambda-function"
+    yor_trace = "cd0396fe-472c-4563-8a04-14ccc2b2a0db"
   }
 }
 

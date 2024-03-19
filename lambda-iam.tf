@@ -17,7 +17,8 @@ resource "aws_iam_role" "lambda_role" {
 EOF
 
   tags = {
-    Name = "${var.prefix}-lambda-role-buienradar"
+    Name      = "${var.prefix}-lambda-role-buienradar"
+    yor_trace = "2bfd602c-4204-4161-b460-c3f0a2576077"
   }
 }
 
