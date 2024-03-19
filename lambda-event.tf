@@ -4,7 +4,8 @@ resource "aws_cloudwatch_event_rule" "buienradar" {
   schedule_expression = var.schedule_expression
 
   tags = {
-    Name = "${var.prefix}-cloudwatch-event"
+    Name      = "${var.prefix}-cloudwatch-event"
+    yor_trace = "00a14ab0-ffd4-4a5e-aea1-0d27ff47009c"
   }
 }
 
